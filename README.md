@@ -1,51 +1,70 @@
-# 🎟️ EventFlow – Sistema de Gestão de Eventos e Ingressos
+# 🎟️ EventFlow — Sistema de Gestão de Eventos e Ingressos
 
-## 📌 Sobre o Projeto
+<p align="center">
+  <strong>Plataforma completa para criação, gerenciamento e venda de ingressos.</strong><br>
+  Backend em <strong>Java + Spring Boot</strong> e Frontend em <strong>React</strong>.
+</p>
 
-O **EventFlow** é um sistema completo para criação, gestão e venda de ingressos para eventos.
-Organizadores podem administrar eventos, tipos de ingressos e check-in via QR Code, enquanto usuários compram ingressos de forma simples e segura.
+---
+
+## 📌 Visão Geral
+
+O **EventFlow** é um sistema profissional de gestão de eventos que permite:
+
+* Organizadores criarem e gerenciarem eventos, lotes, ingressos e vendas.
+* Usuários visualizarem eventos, comprarem ingressos e acessarem QR Codes para check-in.
+* Acompanhamento de vendas em tempo real e controle de entrada.
+
+Projetado com arquitetura escalável e tecnologias amplamente usadas no mercado.
+
+---
+
+## 🏗️ Arquitetura
+
+Este projeto foi construído seguindo boas práticas modernas:
+
+### **Backend**
+
+* Arquitetura separada por camadas: Controllers, Services, Repositories e DTOs.
+* Migrações versionadas com **Flyway**.
+* Autenticação com **JWT + Spring Security**.
+* Acesso a dados com **JPA/Hibernate**.
+
+### **Frontend**
+
+* Estrutura organizada por páginas, componentes, hooks e serviços.
+* Consumo de API via **Axios**.
+* Estado global com **Context API**.
+* Estilização com **TailwindCSS** para alta produtividade.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-### **Backend**
+### **Backend — Java + Spring Boot**
 
-* .NET 8
-* C#
+* Java 21
+* Spring Boot 3
+* Spring Web
+* Spring Data JPA
+* Spring Security (JWT)
 * PostgreSQL
-* Entity Framework Core
-* JWT Authentication
-* FluentValidation
-* AutoMapper
-* Swagger
+* Flyway
+* Lombok
 
-### **Frontend**
+### **Frontend — React**
 
-* React + Vite
+* React 18
 * React Router
 * Axios
-* TailwindCSS
-* Zustand
-* QrCode.react
+* Context API
+* TailwindCSS *(ou Material UI opcional)*
 
----
+### **Infraestrutura**
 
-## 🧱 Arquitetura
-
-### **Backend – Clean Architecture**
-
-* Domain
-* Application
-* Infrastructure
-* API
-
-### **Frontend – Estrutura Padrão**
-
-* Pages
-* Components
-* Services
-* Context/Store
+* Docker / Docker Compose
+* GitHub Projects + Issues
+* Railway / Render *(deploy opcional)*
 
 ---
 
@@ -53,51 +72,65 @@ Organizadores podem administrar eventos, tipos de ingressos e check-in via QR Co
 
 ```
 /eventflow-backend
-    /src
-       /Domain
-       /Application
-       /Infrastructure
-       /API
-    README.md
+   ├── src/main/java/com/eventflow
+   │      ├── controllers
+   │      ├── services
+   │      ├── repositories
+   │      ├── models
+   │      └── dtos
+   ├── src/main/resources
+   │      ├── application.yml
+   │      └── db/migration
+   └── pom.xml
 
 /eventflow-frontend
-    /src
-       /components
-       /pages
-       /services
-       /store
-    README.md
+   ├── src
+   │     ├── pages
+   │     ├── components
+   │     ├── hooks
+   │     └── services
+   └── package.json
 ```
 
 ---
 
-## 🗄️ Banco de Dados
+## 🧩 Funcionalidades Principais
 
-O sistema utiliza **PostgreSQL**, contendo tabelas para:
+### 🎫 **Para Organizadores**
 
-* Users
-* Profiles
-* Events
-* Categories
-* TicketTypes
-* Tickets
-* Orders
-* Checkins
+* Criar e editar eventos
+* Criar lotes e categorias de ingressos
+* Definir quantidades, preços e datas
+* Dashboard com vendas em tempo real
+* Check-in por QR Code
+
+### 👥 **Para Usuários**
+
+* Visualizar eventos
+* Filtrar por categoria, local e data
+* Comprar ingressos
+* Acessar carteira de ingressos
+* Gerar QR Code para entrada
 
 ---
 
 ## ▶️ Como Rodar o Projeto
 
-### **Backend**
+### **1️⃣ Backend**
 
 ```bash
 cd eventflow-backend
-dotnet restore
-dotnet ef database update
-dotnet run
+./mvnw clean install
+./mvnw spring-boot:run
 ```
 
-### **Frontend**
+Caso use Docker:
+
+```bash
+docker compose up -d
+```
+
+### **2️⃣ Frontend**
 
 ```bash
 cd eventflow-frontend
@@ -107,8 +140,17 @@ npm run dev
 
 ---
 
-## 👥 Times e Funções
+## 🧪 Testes (Opcional)
 
-* **Kaique** — Full Stack / Backend Lead
-* **Paulo** — Backend
-* **Lucas** — Frontend
+* Testes de unidade com **JUnit + Mockito** podem ser adicionados.
+* Testes de integração com **Spring Test**.
+
+---
+
+## 🧑‍💻 Contribuidores
+
+| Nome       | Função                    |
+| ---------- | ------------------------- |
+| **Kaique** | Full Stack / Backend Lead |
+| **Paulo**  | Backend                   |
+| **Lucas**  | Frontend                  |
