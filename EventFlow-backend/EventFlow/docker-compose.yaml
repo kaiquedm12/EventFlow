@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: eventflow_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: eventflow
+      POSTGRES_PASSWORD: demetrio08
+      POSTGRES_DB: eventflow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - eventflow-net
+
+volumes:
+  postgres_data:
+
+networks:
+  eventflow-net:
