@@ -1,4 +1,4 @@
-package com.example.EventFlow;
+package com.example.eventflow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
