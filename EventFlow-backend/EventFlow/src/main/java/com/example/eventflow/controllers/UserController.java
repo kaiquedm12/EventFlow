@@ -1,7 +1,7 @@
-package com.example.eventflow.controllers;
+package com.example.eventflow.controller;
 
 import com.example.eventflow.domain.model.User;
-import com.example.eventflow.domain.repository.UserRepository;
+import com.example.eventflow.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -16,12 +16,12 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> list() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @PostMapping
-    public User create(@RequestBody User user) {
+    public User createUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 }
