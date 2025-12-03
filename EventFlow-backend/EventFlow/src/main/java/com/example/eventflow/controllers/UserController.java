@@ -1,7 +1,7 @@
-package com.example.eventflow.controller;
+package com.example.eventflow.controllers;
 
 import com.example.eventflow.domain.model.User;
-import com.example.eventflow.repository.UserRepository;
+import com.example.eventflow.domain.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

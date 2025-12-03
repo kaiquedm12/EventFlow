@@ -1,4 +1,4 @@
-package com.eventflow.config;
+package com.example.eventflow.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

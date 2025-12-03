@@ -1,4 +1,4 @@
-package com.example.eventflow.model;
+package com.example.eventflow.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,14 +6,13 @@ import lombok.*;
 @Entity
 @Table(name = "roles")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false, unique = true)
     private String name;
 }
+
